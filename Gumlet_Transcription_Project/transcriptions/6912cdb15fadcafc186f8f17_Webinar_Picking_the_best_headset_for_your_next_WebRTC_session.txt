@@ -1,0 +1,1535 @@
+Okay.
+Hi, everyone.
+My name is Zachary Levent Levy.
+And with me is Richard Kenney.
+We'll do the introduction soon.
+Before we start, if you can
+just, you know, you can use
+the chat, throw your name or
+just say hi there and where
+you're coming from.
+That would be interesting for me
+just to know, you know, who
+we have here with us.
+On the sidebar, there is chat
+button.
+You can
+Press that, say hi.
+Don't be shy.
+Exactly.
+I know you there.
+Hi, Alan.
+Guatemala, Central America.
+That's a first for me, I
+think.
+And you're Richard.
+Yes, I know you're Richard.
+Paris.
+Nice.
+Hi, Pierre.
+I think that you've been in
+the previous one as well.
+We've got Blue Cross, Patrick from
+Canada.
+We've got Paris, Toronto.
+So another guy from Canada.
+That's great.
+A few other housekeeping stuff.
+There's a Q&A button at the
+top.
+You can use that one.
+If you want to ask questions,
+it will refer to and answer
+in the end.
+Or you can use the sidebar
+chat as well.
+Whenever you ask questions, we'll try
+to push them into the session,
+especially if they are related.
+What I haven't talked about yet
+is what we're going to speak.
+So as I said, I'm Tachil
+Ventlevi.
+I'm
+Logik.me, okay, and TestRTC.
+I write around WebRTC and CPaaS,
+Communication Platform as a Service, and
+doing a lot of things in
+TestRTC around testing, monitoring, and support
+services for WebRTC.
+Now, the context here is slightly
+different.
+A few months ago, I started
+to create a course in WebRTC
+courses around support and WebRTC.
+worked on the course, did a
+lot of things there, and then
+it came the part of dealing
+with what can go wrong in
+call.
+There are different parts that can
+go wrong.
+One of them is the devices
+themselves, and they needed to focus
+on what can go wrong with
+audio devices.
+Well, I was clueless about that
+part, and it was suggested to
+me to talk to the guys
+from Poly about that.
+And then I got connected to
+Richard Kenny.
+Richard, hi.
+Hey, yep, that was me.
+I spoke to Sahi probably a
+couple of weeks ago now, brokered
+by our analyst relations team.
+And I think after we gave
+Sahi the sort of fire hose
+of information coming to him about
+headsets for a
+For a subject that people think,
+just plug a headset in, make
+it work, put it on, there's
+an awful lot to it compared
+to that perception.
+So hopefully the education that we
+gave Sahi a couple of weeks
+ago, we're now able to give
+to you to make sure that
+you'll be able to pick the
+right headset for your next WebRTC
+session.
+Yes.
+So I actually created a lesson
+on that and placed it in
+the course already.
+So that was great for me.
+So thank you for that.
+Now, the thing is that the
+two things, first of all, it
+was really, I really enjoyed talking
+to you.
+So, you know, doing that again
+was like, let's do that.
+Why not?
+And the second thing, I learned
+so much about headsets that I
+didn't know that was actually interesting.
+I mean, headsets are quite boring
+until you start digging in and
+understanding what that means, probably like
+any other subject.
+So I wanted to have, you
+know, that type of a conversation.
+So it's like,
+There are different issues that I've
+seen in the last few years,
+especially in the last year, of
+different contact center scenarios that simply
+broke because of the use of
+specific headsets in WebRTC.
+And I guess my first question
+to you would be, why should
+I even care about headsets?
+Why not just go pick one
+from the store, you know, whatever
+works, look at the plug, if
+that's the USB one, the PL
+one, or whatever I want,
+shove it into my machine and
+that's it.
+What's wrong with that?
+I think for you as a
+tester, if you're a sort of
+developer, probably nothing wrong.
+What you probably want is a
+really simple, low-featured USB headset.
+Very little to go wrong, very
+little added features that add DSP
+latency on these things.
+Brilliant.
+For testing purposes, that sort of
+thing is perfect.
+Plugging your USB cable in, you
+know exactly where your audio is
+going.
+However,
+When you then come to roll
+your application out into an organization,
+when you want to start testing
+with different people, you suddenly find
+there's a whole world of people
+out there that have got very
+different needs, very different requirements.
+First of all, for many people,
+they need convincing that they do
+need to use a headset.
+What's happening is with the sort
+of shift away from people using
+classic on-premises, traditional PBXs that had
+a phone,
+There was no trigger to use
+a headset.
+Now with the move to WebRTC,
+nobody likes staring at their computer
+and shouting at a computer, and
+more importantly, the computer shouting back
+at them, especially when they're in
+an open office.
+And then you start to look
+at, okay, well, where are people
+using it?
+Have they got a private office?
+In which case, okay, nice speakerphone.
+Are they doing this on the
+train, on the Wi-Fi?
+Are they doing this in an
+airport?
+Do they move regularly as part
+of their job?
+Are they an intensive phone user
+that uses phone calls for twelve
+hours a day?
+Do they need to use WebRTC
+with other devices like mobiles?
+So there's so many other different
+applications there that, yes, when you
+are testing, when you're developing, get
+a nice simple headset.
+When you need to move away
+from that to roll out, you
+really do need to take account
+of what the users want and
+what the users do, because that's
+really the biggest influence and that's
+what will get your product adopted
+once it's developed.
+So I'll continue with that new
+train of thought and say, well,
+you know what?
+I want to use AirPods or
+Beats.
+The big ones.
+That's what people go out with
+today.
+First of all, I'm going to
+put up a slide here if
+I can.
+Let's see if I can get
+the screen sharing to work.
+Share that screen.
+Share.
+All right.
+So
+Beats and AirPods are primarily designed
+for listening to music.
+And the big problem with applications,
+the big reason for developing applications
+is speech.
+And what people don't realize in
+an awful lot of cases is
+that there's a huge difference between
+speech and music.
+The catchphrase for Beats is people
+are missing some of the music.
+And what they're missing, if you
+can see the screen here, is
+this area on the left, around
+about the hundred Hertz, the fifty
+Hertz.
+And what that gets you in
+music is this big, nice thumping
+bass.
+So things like, you know, beats
+especially are optimized to deliver that
+thumping bass.
+But as you can see, language,
+there is no speech really down
+at that particular level.
+There's no energy in the speech.
+So if you've got a headset
+or a pair of headphones,
+that are optimized for listening to
+music, it's going to deliver a
+pretty poor audio experience.
+So that's the sort of big
+reason for Beats not being used.
+Yes, but it seems that Beats
+does more.
+It does more than language.
+It does also music.
+Yes, but it's optimized for music.
+So when you look at the
+frequency response of something like a
+Beats headset, it's very heavy around
+the sort of fifty to a
+hundred hertz.
+Now, hopefully, we're going to teach
+people a new word today, and
+that word is fricatives.
+Okay, what's that word?
+Fricatives is where the energy of
+your speech is, and your energy
+of your speech is here in
+this sort of two thousand, three
+thousand hertz area.
+When you make the hard sounds,
+that's what really builds the energy
+of your sound.
+That's what makes speech clear.
+And if you've got a headset
+that's optimized for speech, it actually
+peaks
+but this area up here to
+make sure that you've got much
+more of an ability to hear
+speech clearly.
+So if I'm an audiophile and
+I'm not, thankfully, I'll need two
+different headsets, one for my conferences
+and one for music.
+Or you need an intelligent headset
+that knows what it's doing and
+can switch between modes.
+Oh, okay.
+Where do I get that one?
+Oh, I know a good headset
+vendor.
+I actually didn't know that.
+Just sort of to continue on
+your theme as well,
+why do
+we need intelligent audio?
+If you look at both of
+us, we're in home offices.
+It's really quiet in the background.
+But for anybody else who's on
+this call, take a look around
+you.
+Seventy percent or so of North
+Americans are working out of open
+plan offices these days, I think
+is the statistic.
+And
+you do have noise pollution in
+those offices if they're not managed
+well.
+And you do need headsets that
+can concentrate the audio or enhance
+the speech audio and really make
+it stand out above background noise.
+So again, if you're a developer
+in your homeroom, okay, it's fine,
+whatever headset, but for that commercial
+rollout of your application, get something
+that's optimized for speech.
+Okay, so
+Let's say that I want a
+headset, but it's not the one
+that I need.
+AirPods probably not as well.
+So what makes a headset?
+You showed me last time what
+needs to be there and how.
+So there's so many different varieties
+of headset.
+We can start to look at
+this from a category of what
+types of headset are there for
+people, first of all.
+And what we'll do later on
+is we'll then sort of come
+back and start to look at
+what the users are on this
+one.
+So the headset that most people
+are familiar with these days, thanks
+to things like AirPods, is Bluetooth
+wireless headsets.
+Bluetooth is a fantastic technology.
+It sort of pervasively works anywhere.
+You can use it completely around
+the world.
+Every single mobile device these days
+has got good support.
+Even Windows is actually getting good
+support for Bluetooth on its devices
+these days, eventually.
+A really good thing about Bluetooth,
+like I said, it can work
+anywhere.
+It can work on any particular
+device.
+Then what you then got, the
+trouble with Bluetooth is that sometimes
+you're sharing the airwaves with people.
+Microwave frequencies, wireless LANs, all the
+work in those sort of same
+frequency bands.
+So what we find is that
+some people have a preference for
+absolute speech audio quality.
+They want a band that is
+preserved for these audio devices, which
+is where this technology DECT comes
+in.
+So again, you get all those
+benefits of mobility, the freedom to
+move around, but you've got a
+reserved audio channel just for your
+headset.
+What you can then get into
+is corded headsets.
+So people who don't want the
+hassle of charging up batteries every
+day, people who want to know
+exactly where their audio is going,
+they plug it in, it works.
+It's a whole range of devices
+here that you've got to go
+from.
+Yep, I see a cord.
+You know, these devices plug in,
+they'll work on any device out
+there.
+These are sort of more for
+office users, occasional users.
+What you can then move up
+to is these real intensive devices.
+This is the range that we
+promote for contact centers.
+People who are on the phone
+eight to twelve hours a day
+intensively, very little breaks between them.
+And it's a really intensive environment
+for the devices.
+What would be the difference between
+these two, the corded and the
+corded intensive?
+So hold up a cable here.
+What happens on a daily basis
+is that people fold up their
+headsets, they put them away.
+And when they fold them up,
+they bend, they flex the cable,
+they twist the cable around.
+They also sit there every day
+and they might play with the
+cable or they wrap it around.
+So with an intensive headset, we
+designed those headsets to last five
+years.
+And we think that for an
+intensive usage, somebody will bend that
+cable ten times a day.
+So we know that over the
+life of the headset, it's got
+to last, I don't know, fifty,
+a hundred thousand times.
+For the standard corded headsets, we
+think that they'll be just doing
+that once a day.
+They'll be picked up, moved around
+once, put down again, and that's
+really it.
+But again, we want it to
+last five years, but this time
+it's only going to last twenty
+thousand, for example.
+Those aren't real figures, but they're
+just the relative
+differences is what's correct.
+So those corded intensive users are
+designed to be used almost twenty
+four seven in tough environments.
+OK, and then there is a
+speakerphone, which isn't a headset.
+It isn't a headset, but interestingly,
+it's a very good way of
+getting people to adopt communications
+technologies.
+So there are still people out
+there with their corner offices and
+it's ideal for them.
+But also what you're increasingly seeing
+in enterprises is the huddle room.
+Um, rather than a meeting room
+that people book out and very
+rarely use, this is a huddle
+room with audio and video technology
+and people walk in there.
+They'll bring their laptop with them.
+And you know, there's multiple people
+in the room and you can't
+have multiple people on the same
+So just putting a speakerphone in
+each of these huddle rooms gives
+you the ability to do, um,
+audio conferences with groups of people
+really easily.
+Now for me, I work from
+home a lot.
+Um,
+So, and I do these types
+of conferences and calls with clients,
+you know, vendors, people, whatever.
+I'm probably two or three hours
+a day on video calls, similar
+to this one.
+Which headset should I use?
+So sort of really, it depends
+on, do you have any other
+devices?
+Do you use mobile phone?
+Do you talk on the phone?
+Do you do conferences while you're
+traveling, for example?
+So I hate doing calls on
+my phone because I don't have
+Hence, I don't use there, which
+is to answer your question how
+I work.
+And then I have a laptop
+where I never connect the headset.
+And if I use that for
+calls, it's only while traveling and
+then probably only from a hotel
+room.
+So it almost sounds like you
+need a briefcase of headsets to
+take with you, potentially.
+But I'd recommend starting point is
+the headset that I'm wearing now.
+This is a Voyager.
+It's a Bluetooth headset.
+So it's paired up to my
+mobile whenever I need to make
+phone calls on the mobile if
+I'm traveling.
+It's also paired through a dongle
+into my PC.
+So I haven't used a phone
+on my desk for years, but
+I use extensively collaboration apps, multiple
+meeting apps, along with my mobile.
+Rather than AirPods, which are tucked
+right up here, this has got
+a highly active microphone on it
+to cancel background noise so that
+if I'm traveling, you don't hear
+the train noise, you don't hear
+the airport noise when I'm talking.
+That sounds ideal for you.
+Let's start with a dongle, though.
+Why do you need a dongle?
+You said it connects to Windows
+just fine.
+What we found with
+uh windows is that the bluetooth
+um is patchy there's a fairly
+recent um rollout i think at
+the window one of the latest
+windows creators updates where applications are
+slowly now starting to recognize bluetooth
+so yes i might be able
+to pair my headset to the
+laptop but on the majority of
+windows devices out there the applications
+don't look for that embedded bluetooth
+as an audio source or an
+audio sync.
+So what the dongle does is
+it shows up as a sound
+card and says, okay, I'm a
+sound card, just feed your audio
+to me.
+And that way it just takes
+all the compatibility concerns away from
+IT managers that are rolling this
+out.
+Okay, that was one.
+The second one, you've talked about
+this part of the headset.
+Sorry for my bad English.
+boom this is the boom okay
+so they you know what people
+tended to find in the early
+days of headsets is they kind
+of wanted them to look like
+headphones so we put microphones up
+in here and but what we
+found then is that increasingly as
+people moved into web rtc environments
+software environments we had to do
+a lot of dsp processing to
+make the headset pick up the
+voice
+And a lot of DSP processing
+potentially adds latency.
+The better solution is to physically
+put the microphone as close to
+your mouth as possible.
+That way you get rid of
+any need for processing and you
+sort of physically cancel out the
+background noise.
+So yours is perfectly positioned as
+you'd expect for someone that's talked
+to us for a while.
+Just off the corner of the
+mouth, microphone is right there.
+And that way you're giving a
+nice low latency solution for these
+WebRTC applications.
+and you're able to cancel out
+a lot of the background noise
+that's around you.
+Okay, so there is a lot
+to do.
+You told me last time again
+that the size of the head,
+the length of the microphone, all
+of these things that if I'm
+in a contact center and I
+need to purchase like a hundred
+or two hundred of these, I
+need to have variety for different
+types of people physically to meet
+their needs.
+No, you don't need to variety.
+What we do in our headsets
+is we effectively build or design
+that variety in for you.
+So the headset on the screen
+here, the corded intensive variant, you've
+got seven different adjustability dimensions on
+this one.
+And what that does is that
+for somebody with a huge head
+like me, I expand it to
+its maximum levels.
+It fits on my ears perfectly.
+It puts the microphone in front
+of my mouth.
+Someone with a smaller head, they
+just close all those adjustments up
+and it fits them perfectly as
+There was a variety in the
+fact that you showed me also
+headsets that have only one side,
+like, you know, only on one
+ear.
+Yeah.
+So the DECT wireless one here,
+for example, has one ear.
+What we find there is it's
+almost a user preference.
+If your work is...
+predominantly telephony, so you don't do
+any multimedia work or any webinars,
+and you've got a nice quiet
+office, then people like one ear
+because they like to hear a
+little bit about what's going on
+around them.
+If you work in an open
+plan office with people that are
+noisy, if you've seen our marketing
+material, the ferrets, the keyboard smashers,
+all those sort of things in
+the background, you probably want two
+earpieces.
+Also, if your headset is doing
+shared duty, if it does telephony
+and if it does multimedia work,
+music, webinars, training, videos, you want
+a headset that's got two ears
+to take full account of the
+stereo.
+And there's a different, again, last
+time it was don't use Beats
+because they are too big on
+the ear.
+That was like from the makeup
+point of view.
+A little bit, yeah.
+Again, it depends on how people
+are using the headset.
+Beats, and we sell these headsets
+as well.
+There's headsets that are physically big
+on the ear.
+And what they do is they
+seal around the ear and they
+provide a very good sort of
+physical passive noise canceling.
+You can pair that up with
+active noise canceling that takes away
+some of the higher frequencies.
+But the big headset on the
+ear is really not designed to
+be worn all day.
+What you find is there's a
+lot of heat buildup.
+because it seals around your ear.
+There's a lot of heat buildup
+and people find it uncomfortable after
+a while.
+Um, you know, if you look
+at some of these other headsets
+there, there's smaller ear cushions.
+Some of the ones you see
+are actually foam ear cushions because
+there's more air circulation there.
+And those are the sort of
+ones that are more designed to
+be worn at that intensive end
+of the spectrum of eight, eight
+to ten hours.
+Now it's funny since you last
+talked to me about that, we
+had like, it was cold here
+in Israel.
+And I found myself just leaving
+the headsets on after talking to
+people just to, you know, get
+the heat into my body back.
+It works with your hat.
+You can keep your hat on
+as well, just to keep your
+head warm and your ears warm.
+And let's go back to corded
+versus wireless.
+If Bluetooth is such a great
+thing, why don't I deploy that
+to all of my people in
+the contact center?
+Well, Bluetooth has had a tricky
+relationship with IT people.
+When it was first bought out,
+it was perceived as being very
+insecure.
+There's many stories of Bluetooth being
+hacked, but that's gone away.
+But it still has a little
+bit of a reputation.
+Is it really secure to use
+Bluetooth?
+Yes, it is absolutely secure.
+What you will find, though, is
+that the way that Bluetooth technology
+works is it sort of random
+frequency hops.
+and it can hop onto somebody
+else's channel and create a little
+bit of interference.
+It goes away very quickly, but
+because it's got that random approach
+to finding the channels, it does
+have a limit on the number
+of users within one area, a
+density limit, effectively.
+Because DECT is actively listening in
+on the channels, picking the right
+one, we find that DECT has
+a much greater density potential than
+Bluetooth.
+What we've also found as well
+is because Bluetooth is seen to
+be used with mobiles, some people
+don't want to give the impression
+that it's okay to use a
+mobile in a contact center.
+They want their employees working on
+the phones, talking to customers.
+So they want to give them
+headsets that don't work with mobiles
+deliberately.
+Okay, that's interesting.
+And there is also the matter
+of different latencies, right?
+I saw in the AirPods in
+the last release, they reduced latency
+a bit in the device itself.
+Yeah, so again, when you look
+at the design of a headset,
+like I said, everybody kind of
+wants their headset to look small
+and discreet.
+That's kind of exactly the opposite
+of what we want as a
+designer of these sort of systems.
+As a designer, we want the
+microphone right here.
+We want the earpieces right here,
+nicely covering.
+Because that way, the physical characteristics
+of the headset do all the
+work for us.
+If we take away those physical
+characteristics, we have to replace them
+with DSP activity.
+And so with earpods being so
+small, they have to have a
+fair bit of DSP in them
+to do that.
+If I kind of, you know,
+rough figures here, but a Bluetooth
+headset's got about ninety milliseconds of
+latency.
+Now, those are averages.
+Those can depend on, you know,
+model to model.
+Decked, because decked headsets, like the
+one on the screen here again,
+the Savvy series, because they're physically
+bigger, the microphone's in the right
+place, what we're finding there is
+that the latencies on those systems
+are around about sixty milliseconds.
+Mm-hmm.
+If we then want to take
+it down even further, we come
+down to USB corded headsets.
+If you're looking at a high
+performance headset, it's got a lot
+of DSP in it.
+It's doing a lot of work.
+Maybe it's having to do work
+because of adding acoustic protection for
+intensive users.
+It's about forty five milliseconds there.
+But the sort of entry level
+USB headset with minimal DSP work
+on it is about thirty milliseconds
+So there's quite a spread across
+the different product types.
+And those are all averages.
+we've, I said sort of a
+little bit of a standard here
+of the TIA nine, the old
+telecom standard.
+Um, but generally we're finding that
+those figures are, are perfectly within
+the bounds of application design for
+developers.
+Well, as long as we've done
+everything else, you know, well on
+the other side of where they
+see, but yes, but, and again,
+sometimes we do find that headsets
+are sometimes the sticking plaster that
+goes on the end.
+If people leave them to the
+last minute,
+if they're like designed in at
+launch day, then yeah, there might
+be problems there.
+But if you're designing them in
+from the very start, you can
+build in those characteristics across the
+sort of end-to-end part of your
+And we didn't talk about the
+personas inside the contact center.
+So if I'm managing a contact
+center of two hundred people and
+I decided that I want to
+go, let's say I can't do
+Bluetooth, that would be fine.
+I can't just go and roll
+out two hundred
+decked wireless headsets of the savvy
+series just as an example or
+would that make sense yeah um
+two hundred um decked wireless headsets
+yeah you're gonna have to sort
+of probably work with us to
+look at the space if you're
+fitting them all into a room
+this size yeah maybe there's going
+to be trouble but if you're
+fitting them into a reasonably good
+spaced environment if you've got things
+like partitions if you've got trees
+or foliage in the office at
+any point if they're on different
+floors yeah there's all sorts of
+um
+ways to fit those in.
+But generally, we'd say that two
+hundred people using decked headsets is
+eminently possible.
+So let's say that I'm Uncle
+Scrooge or I want lower latencies,
+I would go for corded intensive.
+Yep.
+For everyone.
+And there's nothing wrong with that.
+That's the model that the majority
+of contact centers have and are
+using at the moment.
+Um, you know, absolute reliability, um,
+these things that, you know, there's
+never going to be any concerns
+about battery.
+There's never going to be concerns
+about where your audio is going.
+Um, so yeah, people are, people
+want to use those corded headsets
+Does it make sense to mix
+them up?
+If you want to, again, let's
+just sort of show you a
+slide here again.
+Most people's image of the contact
+center is that it's a big
+warehouse full of people all doing
+exactly the same job, constantly answering
+phones.
+To be honest, that's a little
+bit outdated these days.
+That persona that was called agent
+is really in use only in
+a lot of the outsourcing areas
+where they're there just to make
+phone calls.
+And it's about quantity rather than
+quality.
+What we're seeing nowadays is that
+easy, simple phone calls
+are easy, simple interactions are dealt
+with by automated systems, bots, AIs,
+chatbots, you name it.
+The simple stuff is done that
+way or even through self-service.
+So the phone call coming into
+a contact center now is an
+escalation.
+Somebody's tried a digital channel.
+It hasn't worked.
+They're frustrated.
+They now make a phone call,
+and that's an escalation.
+So more these days, customer service
+rep is that type of person.
+And their focus is on the
+quality of the experience, not the
+quantity of phone calls they go
+through.
+So we're starting to see some
+of these high-end customer service reps
+use wireless.
+And in a lot of cases,
+we're actually seeing the contact center
+supervisor use wireless as well because
+they need to walk the floor.
+They need to look over their
+employee's shoulder and guide them through
+a complex interaction.
+But they still need to be
+available for a phone call.
+So we are seeing that mix
+of, okay, if you're predominantly at
+your desk, yep, okay, corded is
+the right headset.
+Otherwise, we're probably going to give
+you wireless to give you that
+mobility to get around the contact
+center.
+And it's like part of the
+fact that the contact center agent
+job is changing, right?
+It's like we're trying to have
+less churn, have them deal with
+the
+complicated stuff and relegate the easy
+stuff towards self-service channels or even
+bots?
+An example I use of my
+own personal experience is that when
+I was younger, I had to
+ring my bank to find my
+bank balance.
+I can't imagine doing that these
+days.
+It's everywhere.
+It's on an app, twenty four
+seven, whatever I need.
+The only reason I call my
+bank is a credit card fraud
+or unexpected transactions.
+And those are longer, more complex
+things.
+So the person on the other
+end
+doesn't just have to read information,
+read a script, go on to
+the next call.
+They've now got to solve a
+complex problem for me.
+And sometimes they can't solve it
+themselves.
+So they have to work with
+other teams.
+So all of a sudden now
+you've not a sort of single
+person, you're working with team collaboration
+equipment as well.
+And more and more, you're starting
+to see people being focused on
+customer experience.
+Nevermind, did I answer your question
+correctly?
+It's more about
+Did I provide you a really
+good experience that you would recommend
+to your friends?
+So people are now being hired
+to deliver that good experience.
+So it's a very different role.
+I don't like the word agent.
+I don't think it does
+people in contact centers justice, the
+hard work they're doing.
+So it's like as an employee
+or as a manager in the
+contact center, I actually need to
+make them happier.
+At least satisfied from the job
+that you're doing and the way
+they're doing it.
+Hence, I need to deal with
+things like status-based equipment.
+One of the real pain points
+of contact centers is you ring
+in and you're put on hold.
+Why on earth should that happen
+these days in presence and status
+relationships?
+Why can't I see who's available,
+transfer a call to them because
+I know their status rather than
+trying to hunt around and speak
+to people?
+Okay, so let's say I want,
+again, I want to go and
+shop around for a headset.
+What would be the three top
+things that I need to care
+about or define for me before
+I do that purchase?
+All right, so first of all,
+take a look at who your
+users are.
+That's the biggest, most important thing
+We've been studying this for years,
+and we've got a huge database
+of user personas.
+And actually, we can boil it
+down to one, two, three, seven
+different personas covering about ninety one
+percent of the enterprise workforce.
+And once you know those users,
+you then start to know what's
+the devices they use.
+Where do they use those devices?
+And really, that's the sort of
+starting point that you need to
+go to.
+and work from, um, you know,
+then you sort of start to
+look at, okay, what application am
+I using?
+So where, where is that application
+going to be used?
+Is it going to be used
+on a PC?
+Am I still going to be
+making people use desk phones or
+is my employee workforce completely mobile?
+So those are probably the first
+two things that I'd, I'd focus
+on.
+Um, and that would probably get
+you about at the way there
+to choosing your devices.
+Anything that I didn't ask and
+should have asked?
+Let's have a little look through
+some of these things.
+So just sort of one point
+on the contact center application is
+the idea that
+there's a couple
+of ideas there, really.
+And again, it might sort of
+change the device you use and
+you look at for future things.
+It's that
+And traditionally, what we've seen is
+that most people, most organizations start
+off with a call center.
+They have a phone call coming
+into them.
+They expand that to become a
+contact center.
+They do social media, et cetera,
+et cetera.
+But what we're finding now is
+that most people have a really
+high satisfaction rating when it comes
+to voice.
+People actually get the answers that
+they want from a voice conversation.
+They're not so satisfied with those
+digital channels.
+But there's a new channel coming
+through that is starting to supersede
+satisfaction when it comes to interactions.
+And that's video.
+All of a sudden, we're seeing,
+I suppose the UK might be
+typical, they're seeing the high streets
+change into different environments.
+Banks are moving off the high
+street.
+So if I want a mortgage,
+nowadays, I'm more likely to do
+it online as a video interaction
+rather than go into a physical
+bank.
+start your thinking off now of
+okay what's the right audio device
+but don't forget the video devices
+video for customer interactions for internal
+interactions is going to become so
+much more important in the future
+you already see it in the
+demographics of anyone under twenty one
+they they hold their phone like
+this they'll answer it like this
+it's in front of their screen
+I can never get my kids
+to call me by voice
+They will only do a video
+call over WhatsApp, and for them,
+that's a call.
+Because that's what their expectation of
+a call is.
+Exactly right.
+So it's a small niche at
+the moment in contact centers, especially.
+It's getting much bigger in enterprises,
+but it will become much bigger
+for that external integration with companies
+So we have one question here
+that came to us from Ruben.
+What headset do you recommend for
+Windows, Mac, and Linux users?
+Okay, depends on what you want
+to use that headset for.
+Again, go back and look at
+the personas.
+Start off with your personas to
+get the right type of device
+first.
+Now, what we're finding is that
+on, let's look at the question,
+scroll up a minute.
+Windows and Mac, they're pretty mature
+environments now.
+Things like Skype for Business, things
+like Zoom, they all work well
+on Windows and Mac.
+And because they're mature,
+We find developers are used to
+using them, used to working with
+them, etc.
+And that way they know what
+applications to develop to exchange information
+with peripherals.
+So any headset that we've got
+works really well on Windows and
+Mac.
+I don't think we're there yet
+on Linux because the applications on
+there aren't so mature.
+What I can say, though, is
+if you take one of our
+USB headsets, plug it in, it
+will always work as an audio
+What you've then got to do
+is see, okay, how you go
+next to that hook switch control,
+volume control, all of those sort
+of things.
+So I guess what I had
+in the past, I actually used
+Linux and I've moved to Windows
+because of something unrelated to Linux.
+And USB headset always worked there.
+And I used WebRTC on Chrome.
+So it's the same question, I
+guess, with Chromebooks.
+I guess that a lot of
+contact centers are start switching to
+things like a Chromebook device.
+They're not actually.
+Only about twenty five percent of
+contact centers have shifted to cloud.
+I don't want to conflate cloud
+with software.
+It's not entirely true, but we
+do still see that Windows is
+the most prevalent.
+There's a couple of cutting edge
+examples where people are using a
+thin client, a Chromebook or those
+sort of devices, but they are
+actually quite rare still.
+excuse me, the bulk of contact
+center applications are on-premises, phone on
+the desk.
+Okay, another question here.
+I work remotely, but I'm a
+trainer.
+I use a laptop, phone, and
+mobile and need something with great
+audio, but also a very clear
+microphone for presenting webinars and
+recording
+videos.
+Any suggestions?
+Yeah, let's just move that slide
+on there.
+This one here, the Savvy Range.
+what this gives you is a
+connection, a physical connection to a
+USB.
+So for PC connection, physical connection
+to a phone, and then your
+Bluetooth mobile will pair with the
+base.
+So you've got a connection to
+all of them and you're able
+to use it for any, any
+connection, mobile calls, PC calls, desk
+phone calls, all of them plus
+web presenting.
+So that savvy connection,
+Eighty two forty five, for example,
+is a perfect device for that
+particular application.
+So this device, the seven ones
+also have Bluetooth in them on
+the base.
+What you do is you don't
+pair the headset to the mobile.
+You pair the base to the
+mobile and then it still uses
+the DEC frequencies to go from
+the base to the headset.
+And so that's nice.
+I go from headset to base
+with DECT and from base to
+phone with Bluetooth.
+So you can leave your phone
+on your desk at home, walk
+downstairs to the kettle to get
+a cup of tea on, everything
+works.
+That's neat.
+It gives me twice the range
+if I walk with that out
+of the way and then continue
+walking.
+The big problem with using Bluetooth,
+for example, is that very few
+desk phones support Bluetooth.
+There's some other real high-end examples
+that you can pair a mobile
+headset directly to, but we don't
+see that very often.
+So that's what I'd recommend is
+that Savvy series for that application.
+Okay, I see a question from
+Pablo.
+Does a speakerphone prevent echo in
+a web conference?
+A laptop mic speaker, for example,
+causes terrible echo.
+Yes, it does.
+All of ours have got a
+lot of that application built into
+it.
+With a laptop, you're generally not
+expecting it to do speaking and
+listening at the same time.
+People think, okay, it's mostly there
+for broadcasting.
+So we don't see laptop design
+being particularly good for web conference.
+I do actually say that the
+latest Macs are pretty good at
+doing that sort of thing.
+They seem to have that expectation
+built in, but for the majority
+of windows-based PCs, no, they're awful.
+But speaker phones solve that completely.
+Yes, I did.
+We did.
+When I worked at the Rad
+Vision about ten years ago or
+twelve, we did a project with
+Samsung.
+on an LCD display that had,
+you know, not WebRTC, but had
+video conferencing inside with a camera
+and everything in there.
+And after the first design, they
+found that they had an issue.
+So the first hardware design comes
+There is an awful lot of
+noise.
+And the reason was that the
+microphone was placed too close to
+the fan inside the screen.
+Okay, so yeah.
+I guess it's the same with
+a laptop.
+It's a small crowded space to
+put everything inside it.
+Yeah, and also you're dealing with
+the idea of somebody thumping the
+keys on a regular basis as
+well, which you don't get.
+Speaker phones, we know that they're
+going to be used for conferences.
+We can build the DSP into
+it to separate the speaking and
+the microphone nice and easily.
+Okay, let's see.
+Why not use a speaker phone
+instead of headset?
+That I can answer.
+Speaker phone is external.
+Now, once it is external, there
+are...
+developer or as an IT manager,
+I need to maintain two separate
+stacks or deal with two separate
+devices.
+So that's one problem.
+I hope that answers your question,
+The other one is if I'm
+going to use an external device,
+I need to somehow pair that
+to the experience on the laptop,
+especially if this is a contact
+center with a CRM.
+WebRTC allows me to do everything
+within the same device, which is
+the PC.
+inside the browser, inside the CRM
+itself.
+So there is no need to
+go elsewhere.
+And as an IT manager, I
+have less moving parts, which means
+less work to do on my
+daily job.
+So it's easier to scale up.
+I think also looking at it
+from the end user point of
+view, most people are working in
+open offices.
+I don't want to sit next
+to somebody and listen into their
+It's incredibly frustrating.
+That's true.
+Can I sort of back up
+some questions?
+There's a couple in there that
+we can have a look at
+answering.
+So Michael McCready's using the Voyager,
+sixty two hundred from Plantronics, or
+as we're now called.
+For those of you on the
+video, that's this device here.
+It sits as a halo around
+the neck and then you've got
+your earbuds here to listen in.
+Fantastic headset.
+But as you say, occasionally wearing
+a collared shirt does sit with
+I tend to find that I
+put it above the collars.
+If you have a look at
+any picture of our CEO, Joe
+Burton, he's always wearing one of
+these.
+So yes, it can do.
+Don't put it underneath, put it
+over the top of it so
+it sits there nice and comfortably.
+Love these headsets.
+What they do is they're great.
+They vibrate when they ring.
+So at the moment, I've got
+to keep this headset on to
+know when my phone's ringing.
+With this one, it vibrates around
+my neck.
+I can put it in and
+answer the phone call.
+There we go.
+Is there a wired... Stop writing.
+I can't read the questions.
+Is there a wired budget headset
+recommended for teachers teaching online?
+Yeah, I would go for one
+of our Blackwire range, the middle
+on the screen there.
+There's a few entry-level versions of
+that one that will give you
+all of the quality that you've
+come to expect from Poly.
+So as a teacher, you can't
+be missing your students.
+You don't want a headset to
+be going wrong.
+So I would recommend having a
+look at the entry versions of
+those Blackwire series online.
+Question from Pierre Corded.
+USB or mini jack when plugged
+to a computer?
+I guess you need to start
+by explaining what a mini jack
+is.
+I'm guessing that a mini jack
+is either the four pole three
+and a half mil connector that
+you get on Macs and new
+PCs or the good old twin
+three and a half mil plugs
+that we used to get on
+PCs.
+The big problem with both of
+those designs is they are audio
+only.
+So if all you want to
+do is have an audio device
+and you're going to answer your
+calls on the screen or do
+all of your controls on screen,
+brilliant.
+Mini jack connectors are low latency,
+low power consumption.
+To be honest, these days you'll
+probably struggle to find a headset
+that's got a mini jack connector
+on it.
+But if you want any form
+of managing the headset, if you
+want any form of
+interaction between an application and a
+headset so for example if i
+press my mute button now it
+will sync with the any meeting
+app that we're using on screen
+all of that because we're doing
+it through usb so you know
+if you're doing anything other than
+pure basic audio go down the
+route of usb okay i guess
+we have the last question now
+um cost wise is a poly
+wireless headset
+or speakerphone more cost-effective for remote
+user while not keeping them wired?
+I'll be honest, I don't know.
+There's such a broad range of
+prices on all of these devices
+that we can satisfy any particular
+budget for either of those.
+Go back to what your user
+wants and what they need in
+an application first and start from
+Generally, I think you'll probably find
+that there's parity between the headsets
+and the speakerphones when you look
+at all the different items that
+we've got in the range.
+I've grown up, I've worked with
+Plantronics and AirPoly for seventeen years,
+so I'll always choose a headset
+over a speakerphone.
+So that would be my recommendation
+and preference.
+But I know there's people that
+don't want to wear them and
+will only use them.
+So go back to your users,
+look at where they're going to
+use the devices, look at what
+they're going to use them for.
+So speakerphone, to be honest, is
+absolutely awful for listening to music.
+These headsets are so much better.
+And would you go, as someone
+that lives with headsets, would you
+go with a corded or wireless
+one?
+My preference is wireless, but that's
+because I get to choose from
+every single thing in our portfolio.
+What I find is that if
+I am traveling and if I
+don't know whether I will get
+good access to charging or any
+of those sort of things,
+I might well switch over to
+a corded one.
+That's sort of absolute guarantee of
+audio.
+In the past as well for
+webinars, I've always used corded for
+webinars just because I know I
+can absolutely trust it and there's
+no interference, no battery's going to
+be wrong.
+But I kind of get in
+the, I've lost my charging anxiety
+over that now.
+So it's kind of, they are
+now good enough to replace corded
+in most scenarios.
+The obvious thing is that if
+you are using them, I think
+this one's got about a fourteen,
+fifteen hour battery time on it.
+So if I'm flying to Australia,
+I might probably have to consider
+going to a corded version or
+one of our different ones.
+Pablo, send us your credit card
+details.
+We'll make sure that everybody gets
+So Richard, I'd like to thank
+you a lot.
+It was very interesting for me
+again.
+I learned new things from our
+last conversation.
+So really, thank you for doing
+that with me.
+I really enjoyed the webinar.
+Yeah, and thank you for having
+us on board, Sahil, and thank
+you for everybody else for your
+time today as well.
+Thanks, everyone.
+Bye.
